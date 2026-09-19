@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorOld80.PomocPage"
+             Title="Pomoc">
+    <VerticalStackLayout>
+        <Label Text="1. Wpisz kwotę w polu 'z waluty'"/>
+        <Label Text="2. Wybierz walutę źródłową z lewej listy"/>
+        <Label Text="3. Wybierz walutę docelową z prawej listy"/>
+        <Label Text="4. Wynik pojawi się automatycznie w polu 'przeliczone'"/>
+        <Button Text="Wróć" Clicked="btnWroc_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

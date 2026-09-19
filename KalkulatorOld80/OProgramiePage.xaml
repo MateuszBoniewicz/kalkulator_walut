@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorOld80.OProgramiePage"
+             Title="O Programie">
+    <VerticalStackLayout>
+            <Label Text="Mateusz Boniewicz"/>
+            <Label Text="03.05.2026"/>
+            <Label Text="Uniwersytet Kazimierza Wielkiego"/>
+            <Label Text="Aplikacje uniwersalne Windows"/>
+            <Button Text="Wróć" Clicked="btnWroc_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

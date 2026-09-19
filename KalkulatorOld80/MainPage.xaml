@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorOld80.MainPage">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="szablonWaluty">
+            <VerticalStackLayout Padding="6">
+                <Label Text="{Binding kod_waluty}"/>
+                <Label Text=": " WidthRequest="10"/>
+                <Label Text="{Binding kod_waluty}"/>
+            </VerticalStackLayout>
+        </DataTemplate>
+        <Style TargetType="CollectionView">
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="WidthRequest"  Value="100"/>
+            <Setter Property="HeightRequest" Value="200"/>
+            <Setter Property="ItemTemplate"  Value="{StaticResource szablonWaluty}"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <Grid BackgroundColor="Gray" RowDefinitions="auto, *, auto"
+          Padding="10" HorizontalOptions="Start" Loaded="Grid_Loaded"
+          >
+        <!--część wspólna - dwie etykiety wiersz nr0-->
+        <VerticalStackLayout>
+            <Label Text="WALUTY" FontAttributes="Bold"/>
+            <Label Text="kalkulator" FontSize="Large"/>
+        </VerticalStackLayout>
+        <!--część operacyjna wiersz 2, nr1-->
+        <VerticalStackLayout Grid.Row="1">
+            <HorizontalStackLayout>
+                <Label Text="z waluty:" Margin="0,0,10,0"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="txtKwota" HorizontalTextAlignment="End" FontSize="32"  WidthRequest="200" BackgroundColor="White" TextChanged="txtKwota_TextChanged"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="przeliczone: " VerticalOptions="Center" />
+                <Label x:Name="tbPrzeliczona" Text="0,00" HorizontalTextAlignment="End" WidthRequest="200" FontSize="32"/>
+            
+            
+            </HorizontalStackLayout>
+            <Label Text="z waluty --> na walutę" HorizontalOptions="Center" />
+
+            <HorizontalStackLayout>
+                <Border Margin="10" StrokeThickness="3" Stroke="Blue" >
+                    <CollectionView x:Name="lbxZWaluty" SelectionChanged="przeliczKwoty"/>   
+                </Border>
+                <Border Margin="10" StrokeThickness="3" Stroke="Blue" >
+                    <CollectionView x:Name="lbxNaWalute" SelectionChanged="przeliczKwoty"/>
+                </Border>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="End">
+            <Button Text="O Programie" Clicked="btnOProgramie_Clicked"/>
+            <Button Text="Pomoc" Clicked="btnPomoc_Clicked"/>
+        </HorizontalStackLayout>
+    </Grid>
+
+</ContentPage>
