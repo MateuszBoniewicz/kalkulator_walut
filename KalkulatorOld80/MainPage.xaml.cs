@@ -40,16 +40,7 @@ namespace KalkulatorOld80
 
             var daneXml = XDocument.Parse(dane);
             var tylkoElementyPozycja = daneXml.Descendants("pozycja");
-            //var jednaWalutaXml = tylkoElementyPozycja.FirstOrDefault();
 
-            //obiekt waluty klasy PozycjaTabeliA
-            //var obiektWaluty = new PozycjaTabeliA
-            //{
-            // kod_waluty =jednaWalutaXml.Element("kod_waluty").Value,
-            // kurs_sredni = jednaWalutaXml.Element("kurs_sredni").Value,
-            //nazwa_waluty = jednaWalutaXml.Element("nazwa_waluty").Value,
-            //  przelicznik = jednaWalutaXml.Element("przelicznik").Value,
-            //};
             var listaWalut = new List<PozycjaTabeliA>();
             //listaWalut.Add(obiektWaluty);
             //biblioteka Linq
